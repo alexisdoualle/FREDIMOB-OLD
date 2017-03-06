@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-
+            System.out.println(Utils.getIPAddress(true));
             //methode fonctionnant sur l'UI
 
             pdLoading.dismiss();
@@ -172,7 +172,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Email ou mot de passe incorrect", Toast.LENGTH_LONG).show();
 
             } else if (result.equalsIgnoreCase("exception") || result.equalsIgnoreCase("unsuccessful")) {
-                System.out.println("on est dans: if result.equalsIgnoreCase(exception)");
                 Toast.makeText(MainActivity.this, "Problème de connexion.", Toast.LENGTH_LONG).show();
 
             }
