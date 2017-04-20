@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
             try {
 
-                // adresse en fonction de l'ip de l'ordinateur:
-                url = new URL("http://10.0.2.129:8888/testLogin/login.inc.php");
+                // adresse en fonction de l'ip de l'ordinateur (et non l'ip de l'appareil ou émulateur android)
+                url = new URL("http://10.0.5.190:8888/testLogin/login.inc.php");
 
             } catch (MalformedURLException e) {
                 // TODO Auto-generated catch block
@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 // Classe HttpURLConnection pour recevoir et envoyer les requetes sql
                 conn = (HttpURLConnection)url.openConnection();
+                System.out.println(conn);
                 conn.setReadTimeout(READ_TIMEOUT);
                 conn.setConnectTimeout(CONNECTION_TIMEOUT);
                 conn.setRequestMethod("POST");
